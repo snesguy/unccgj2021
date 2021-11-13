@@ -25,8 +25,8 @@ public class SpawnerTest : MonoBehaviour
     {
         if(Input.GetKey("space") && curCooldown <= 0)
         {
-            var obj = Instantiate(chocolate, transform.position + (this.transform.forward * xSpawnDist), Quaternion.identity);
-            obj.GetComponent<Rigidbody2D>().velocity = this.transform.forward * xInititalVelocity;
+            var obj = Instantiate(chocolate, transform.position + (this.transform.up * xSpawnDist), Quaternion.identity);
+            obj.GetComponent<Rigidbody2D>().velocity = this.transform.up * xInititalVelocity;
             curCooldown = cooldown;
         }
         if(curCooldown > 0)

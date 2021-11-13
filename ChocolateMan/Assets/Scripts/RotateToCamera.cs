@@ -13,13 +13,12 @@ public class RotateToCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mouse = Input.mousePosition;
-        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(
+        Vector2 mouse = Input.mousePosition;
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector2(
                                                             mouse.x, 
-                                                            mouse.y,
-                                                            this.transform.position.y));
+                                                            mouse.y));
         Vector3 forward = mouseWorld - this.transform.position;
-        //forward = forward.normalized;
-        this.transform.rotation = Quaternion.LookRotation(forward, new Vector3(0.0f, 0.0f, 1.0f));
+        forward.z = 0.0f;
+        this.transform.rotation = Quaternion.LookRotation(new Vector3(0.0f, 0.0f, 1.0f), forward);
     }
 }
