@@ -20,11 +20,12 @@ public class SpawnerTest : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(Input.GetKey("space") && curCooldown <= 0 && StatsKeeper.chocolateInTank > 0)
         {
             var obj = Instantiate(chocolate, transform.position + (this.transform.up * xSpawnDist), Quaternion.identity);
+            obj.transform.localScale *= StatsKeeper.chocolateSize;
             obj.GetComponent<Rigidbody2D>().velocity = this.transform.up * StatsKeeper.firingVelocity;
             curCooldown = cooldown;
             StatsKeeper.chocolateInTank--;
