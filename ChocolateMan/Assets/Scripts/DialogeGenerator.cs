@@ -14,10 +14,23 @@ public static class DialogeGenerator
         new string[]{"DSHALKFAS", "TE CHOCOLATE WIL COM ON Us aL!", "SPRED TE LUV","CHOCOLATEMAN COMES"},
         new string[]{"WE'RE COMING TOGETHER!"}
     };
+    
     public static string getText(int infectionLevel, float infection)
     {
         if(infectionLevel >= dialogue.Length)
             infectionLevel = dialogue.Length - 1;
         return dialogue[infectionLevel][Random.Range(0, dialogue[infectionLevel].Length)];
+    }
+
+    public static int getIndex(int infectionLevel, string val)
+    {
+        for(int i = 0; i < dialogue[infectionLevel].Length; i++)
+        {
+            if(dialogue[infectionLevel][i] == val)
+            {
+                return i;
+            }
+        }
+        return 0;
     }
 }

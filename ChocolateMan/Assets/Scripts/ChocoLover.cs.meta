@@ -3,7 +3,9 @@ guid: 235b7e7b0933a94fdb7ebd464b817728
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - chocolate: {fileID: 6958884713602013132, guid: e670f3f8c43405dfca7ad1c3da27c4ff, type: 3}
+  - dialogueText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
