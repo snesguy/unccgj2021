@@ -225,9 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chocolate: {fileID: 6958884713602013132, guid: e670f3f8c43405dfca7ad1c3da27c4ff, type: 3}
   cooldown: 2
+  curCooldown: 0
   xSpawnDist: 0.5
-  xInititalVelocity: 5
-  yInitialVelocity: 1.5
 --- !u!1 &3560806168933373833
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235b7e7b0933a94fdb7ebd464b817728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chocolate: {fileID: 0}
   dialogueText: {fileID: 0}
   infection: 0
   infectionLevel: 0
+  canBuddy: 0

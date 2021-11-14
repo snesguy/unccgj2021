@@ -968,6 +968,7 @@ MonoBehaviour:
   - {fileID: 6803728173121355487, guid: 6d67a28003df6680e98f32619da4b4b3, type: 3}
   - {fileID: 7274150142751038569, guid: c0a571d68448d1863a0074a6e221350f, type: 3}
   - {fileID: 7522585140730133681, guid: a089a8477658f5ac0b998c2df86e9e1d, type: 3}
+  - {fileID: 1423201619547467147, guid: 8f94e3ad532be2638a9f90843f4687bd, type: 3}
   recentSpawn: 0
 --- !u!4 &1897605238
 Transform:
