@@ -17,10 +17,18 @@ public static class StatsKeeper
     public static float chocolateSize = 1.0f;
     public static long chocolateSizeCost = 1;
     public static float chocolateSizeRamp = 1.1f;
+    public static int chocoBuddyCount = 1;
+    public static float chocoBuddyWorkRate = 10.0f;
+    public static long chocoBuddyUpgradeCost = 1000;
 
     public static void MoreChocolateManual()
     {
         chocolate += chocolatePerClick;
+    }
+
+    public static void MoreChocolateBuddy()
+    {
+        chocolate += chocoBuddyCount;
     }
 
     public static void FillTank(long amount)
@@ -40,54 +48,13 @@ public static class StatsKeeper
 
     public static string LongToText(long longValue)
     {
-        bool moreThanThousand = longValue >= 1_000;
-        bool moreThanHundred = longValue >= 100;
-        string stringValue = "";
-        if(longValue >= 1_000_000_000_000_000_000)
+        string stringValue = longValue.ToString();
+
+        for(int i = stringValue.Length; i > 3; i -= 3)
         {
-            long val = longValue % 1_000_000_000_000_000_000;
-            stringValue += val;
-            longValue -= val;
+            stringValue = stringValue.Insert(i-3, ",");
         }
-        if(longValue >= 1_000_000_000_000_000)
-        {
-            long val = longValue % 1_000_000_000_000_000;
-            stringValue += val;
-            longValue -= val;
-        }
-        if(longValue >= 1_000_000_000_000)
-        {
-            long val = longValue % 1_000_000_000_000;
-            stringValue += val;
-            longValue -= val;
-        }
-        if(longValue >= 1_000_000_000)
-        {
-            long val = longValue % 1_000_000_000;
-            stringValue += val;
-            longValue -= val;
-        }
-        if(longValue >= 1_000_000)
-        {
-            long val = longValue % 1_000_000;
-            stringValue += val;
-            longValue -= val;
-        }
-        if(longValue >= 1_000)
-        {
-            long val = longValue % 1_000;
-            stringValue += val;
-            longValue -= val;
-        }
-        if(moreThanThousand && longValue < 100)
-        {
-            stringValue += "0";
-        }
-        if(moreThanHundred && longValue < 10)
-        {
-            stringValue += "0";
-        }
-        stringValue += longValue;
+
         return stringValue;
     }
 }
