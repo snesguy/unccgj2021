@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1328071799}
   - component: {fileID: 1328071798}
-  - component: {fileID: 1328071797}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -75,14 +74,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1328071797
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328071796}
-  m_Enabled: 1
 --- !u!1 &3560806168430931350
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +232,7 @@ GameObject:
   - component: {fileID: 3560806168933373832}
   - component: {fileID: 3560806168933373847}
   - component: {fileID: -6614220262933540167}
+  - component: {fileID: 2673282362910310360}
   m_Layer: 0
   m_Name: ChocolateMan
   m_TagString: Player
@@ -390,8 +382,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235b7e7b0933a94fdb7ebd464b817728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips0: []
+  audioClips1: []
+  audioClips2: []
+  audioClips3: []
+  audioClips4: []
+  audioClips5: []
+  audioClips6: []
   chocolate: {fileID: 6958884713602013132, guid: e670f3f8c43405dfca7ad1c3da27c4ff, type: 3}
   dialogueText: {fileID: 0}
   infection: 0
   infectionLevel: 0
   canBuddy: 0
+  curxIndex: 0
+  curyIndex: 0
+--- !u!81 &2673282362910310360
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560806168933373833}
+  m_Enabled: 1
