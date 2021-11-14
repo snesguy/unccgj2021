@@ -18,12 +18,26 @@ public class ChocolateAmountUpdater : MonoBehaviour
         }
     }
 
+    IEnumerator startDuties()
+    {
+        Debug.Log("startingDuties");
+        for (int i = StatsKeeper.chocoBuddyCount; i > 0; i--)
+        {
+
+            yield return new WaitForSeconds(0.2f);
+            Debug.Log("Buddy" + i + "deployed");
+            StartCoroutine("chocoBuddyDuties");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
         if(ballSpawner != null)
-            StartCoroutine("chocoBuddyDuties");
+        {
+            StartCoroutine("startDuties");
+        }
     }
 
     // Update is called once per frame

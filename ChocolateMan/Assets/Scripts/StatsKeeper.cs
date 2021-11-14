@@ -18,8 +18,8 @@ public static class StatsKeeper
     public static float chocolateSize = 1.0f;
     public static long chocolateSizeCost = 1;
     public static float chocolateSizeRamp = 1.1f;
-    public static int chocoBuddyCount = 1;
-    public static float chocoBuddyWorkRate = 10.0f;
+    public static int chocoBuddyCount = 50;
+    public static float chocoBuddyWorkRate = 5.0f;
     public static long chocoBuddyUpgradeCost = 1000;
 
 
@@ -30,7 +30,7 @@ public static class StatsKeeper
 
     public static void MoreChocolateBuddy()
     {
-        chocolate += chocoBuddyCount;
+        chocolate += 1;
     }
 
     public static void FillTank(long amount)
