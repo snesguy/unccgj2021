@@ -1442,6 +1442,7 @@ GameObject:
   - component: {fileID: 467149611}
   - component: {fileID: 467149614}
   - component: {fileID: 467149615}
+  - component: {fileID: 467149616}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1624,6 +1625,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chocoganda: {fileID: 8300000, guid: 34fc48df7d0a8d808945dabf3708a6eb, type: 3}
   chocoSong: {fileID: 8300000, guid: 86bc0bd02a4a78edaaa96ae6ba77988a, type: 3}
+  randGen: 0
+  clip: {fileID: 0}
+--- !u!114 &467149616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467149610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb57feeb281226449ab4e3435eeafb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509917598
 GameObject:
   m_ObjectHideFlags: 0
