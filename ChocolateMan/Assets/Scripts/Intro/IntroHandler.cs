@@ -33,7 +33,7 @@ public class IntroHandler : MonoBehaviour
         {
             timer += Time.deltaTime;
             Color orig = respectfulText.color;
-            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 0, 2.5f * Time.deltaTime));
+            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 0, 1.0f * Time.deltaTime));
             Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, Color.green, 3.5f * Time.deltaTime);
             
         }
@@ -50,7 +50,7 @@ public class IntroHandler : MonoBehaviour
         {
             timer += Time.deltaTime;
             Color orig = respectfulText.color;
-            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 255, 2.0f * Time.deltaTime));
+            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 1.0f, 2.0f * Time.deltaTime));
         }
         else
         {
