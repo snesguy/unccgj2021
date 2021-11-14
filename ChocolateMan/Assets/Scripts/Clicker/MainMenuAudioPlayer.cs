@@ -6,6 +6,10 @@ public class MainMenuAudioPlayer : MonoBehaviour
 {
     private AudioSource audioSource;
     private float cooldown;
+    public AudioClip chocoganda;
+    public AudioClip chocoSong;
+    public int randGen = 0;
+    public AudioClip clip;
 
 
     // Start is called before the first frame update
@@ -21,7 +25,20 @@ public class MainMenuAudioPlayer : MonoBehaviour
         {
             if(cooldown <= 0)
             {
-                cooldown = Random.Range(1.0f, 15.0f);
+                clip = null;
+
+                randGen = Random.Range(0, 100);
+
+                if (randGen > 40)
+                {
+                    clip = chocoSong;
+                } else
+                {
+                    clip = chocoganda;
+                }
+
+                cooldown = Random.Range(1.0f, 5.0f);
+                audioSource.clip = clip;
                 audioSource.Play();
             }
             else

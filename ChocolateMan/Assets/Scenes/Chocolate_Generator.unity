@@ -1622,6 +1622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55cc4f609d4a5f3b952457534c36bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chocoganda: {fileID: 8300000, guid: 34fc48df7d0a8d808945dabf3708a6eb, type: 3}
+  chocoSong: {fileID: 8300000, guid: 86bc0bd02a4a78edaaa96ae6ba77988a, type: 3}
 --- !u!1 &509917598
 GameObject:
   m_ObjectHideFlags: 0
