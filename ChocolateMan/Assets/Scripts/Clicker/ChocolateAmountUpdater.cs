@@ -20,7 +20,6 @@ public class ChocolateAmountUpdater : MonoBehaviour
 
     IEnumerator startDuties()
     {
-        Debug.Log("startingDuties");
         for (int i = StatsKeeper.chocoBuddyCount; i > 0; i--)
         {
 
