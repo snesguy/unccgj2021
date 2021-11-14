@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnerTest : MonoBehaviour
 {
@@ -8,14 +9,14 @@ public class SpawnerTest : MonoBehaviour
     public GameObject chocolate;
 
     public float cooldown;
-    private float curCooldown = 0;
+    public float curCooldown = 0;
 
     public float xSpawnDist;
 
     // Start is called before the first frame update
     void Start()
     {
-        cooldown = 60.0f / StatsKeeper.chocolatePerSecond;
+        cooldown = 1.0f / StatsKeeper.chocolatePerSecond;
     }
 
     // Update is called once per frame
@@ -27,6 +28,10 @@ public class SpawnerTest : MonoBehaviour
             obj.GetComponent<Rigidbody2D>().velocity = this.transform.up * StatsKeeper.firingVelocity;
             curCooldown = cooldown;
             StatsKeeper.chocolateInTank--;
+            if(StatsKeeper.chocolateInTank == 0)
+            {
+                SceneManager.LoadScene(1);
+            }
         }
         if(curCooldown > 0)
             curCooldown -= Time.deltaTime;

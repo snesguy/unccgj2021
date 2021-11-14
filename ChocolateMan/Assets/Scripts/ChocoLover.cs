@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChocoLover : MonoBehaviour
 {
-
+    public GameObject chocolate;
     public DialogueText dialogueText;
     private float infectiousRate = 0.01f;
 
@@ -13,6 +13,7 @@ public class ChocoLover : MonoBehaviour
     private float textChangeDelay = 3.0f;
     private float curTextChangeDelay;
     private SpriteRenderer spriteRenderer;
+    private bool buddy = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,11 +38,20 @@ public class ChocoLover : MonoBehaviour
         else if(infection >= 0.7f && infectionLevel == 2)
         {
             infectionLevel++;
+            if(!buddy)
+            {
+                buddy = true;
+                StatsKeeper.chocoBuddyCount++;
+            }
         }
         else if(infection >= 1.2f && infectionLevel == 3)
         {
             infectionLevel++;
                 
+        }
+        else if(infection >= 5)
+        {
+            Explode();
         }
         if(curTextChangeDelay <= 0)
         {
@@ -57,7 +67,18 @@ public class ChocoLover : MonoBehaviour
         }
     }
 
-    
+    void Explode()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            var obj = Instantiate(chocolate, transform.position, Quaternion.identity);
+            obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-10.0f, 10.0f));
+        }
+        buddy = false;
+        StatsKeeper.chocolate += 500;
+        StatsKeeper.chocoBuddyCount--;
+        Destroy(this.gameObject);
+    }
 
     void OnCollisionStay2D(Collision2D collisionInfo)
     {

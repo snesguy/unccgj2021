@@ -37,18 +37,17 @@ public class GenerateRooms : MonoBehaviour
 
         if(placeholderSquare != null && Mathf.Abs(player.position.x - placeholderSquare.transform.position.x) > 5 * roomOffsets)
         {
-            DestroyImmediate(placeholderSquare);
+            Destroy(placeholderSquare);
             placeholderSquare = null;
         }
     }
 
     private void spawnRoom(int newOffset, int direction=1, int adder=4)
     {
-        Debug.Log(newOffset);
         int xPos = roomOffsets * ((adder * direction) + newOffset);
         if(spawnedRooms.ContainsKey(xPos))
         {
-            DestroyImmediate(spawnedRooms[xPos]);
+            Destroy(spawnedRooms[xPos]);
         }
         GameObject room = Instantiate(rooms[Random.Range(0, rooms.Length)], new Vector3(xPos, 0.0f, 0.0f), Quaternion.identity);
         spawnedRooms[xPos] = room;

@@ -22,7 +22,8 @@ public class ChocolateAmountUpdater : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
-        StartCoroutine("chocoBuddyDuties");
+        if(ballSpawner != null)
+            StartCoroutine("chocoBuddyDuties");
     }
 
     // Update is called once per frame
