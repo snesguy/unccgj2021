@@ -80,7 +80,7 @@ public class ChocoLover : MonoBehaviour
         for(int i = 0; i < 20; i++)
         {
             var obj = Instantiate(chocolate, transform.position, Quaternion.identity);
-            obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-15.0f, 15.0f));
+            obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-18.5f, 18.5f), Random.Range(-25.0f, 25.0f));
         }
         StatsKeeper.chocolate += 500;
         if(buddy)

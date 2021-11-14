@@ -7,7 +7,7 @@ public static class StatsKeeper
     public static long chocolate = 50;
     public static long maxTankCapacity = 50;
     public static long ChocoTankSizeUpgradeCost = 50;
-    public static long chocolateInTank = 50;
+    public static long chocolateInTank = 0;
     public static long day = 1;
     public static long chocolatePerClick = 1;
     public static long chocolatePerClickCost = 100;
@@ -18,7 +18,7 @@ public static class StatsKeeper
     public static float chocolateSize = 1.0f;
     public static long chocolateSizeCost = 1;
     public static float chocolateSizeRamp = 1.1f;
-    public static int chocoBuddyCount = 50;
+    public static int chocoBuddyCount = 0;
     public static float chocoBuddyWorkRate = 5.0f;
     public static long chocoBuddyUpgradeCost = 1000;
     public static Color chocoColor = new Color(154.0f/255.0f, 86.0f/255.0f, 0.0f, 244.0f/255.0f);
