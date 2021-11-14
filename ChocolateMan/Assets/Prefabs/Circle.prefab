@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8458458784680200356}
   - component: {fileID: 514601753360388573}
   - component: {fileID: 8629376710983166211}
+  - component: {fileID: 1962234666104348421}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Chocolate
@@ -122,3 +123,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &1962234666104348421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958884713602013132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70e86038de888e2e9b79558422acc86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8458458784680200356}
