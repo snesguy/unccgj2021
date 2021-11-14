@@ -19,7 +19,7 @@ public class RecruitBuddiesHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(StatsKeeper.chocolateInTank >= StatsKeeper.maxTankCapacity)
+        if(StatsKeeper.chocolateInTank >= 1)
         {
             button.interactable = true;
         }
@@ -31,7 +31,7 @@ public class RecruitBuddiesHandler : MonoBehaviour
 
     public void ComeTogethering()
     {
-        if (StatsKeeper.chocolateInTank >= StatsKeeper.maxTankCapacity)
+        if (StatsKeeper.chocolateInTank >= 1)
         {
             SceneManager.LoadScene(2);
         }
