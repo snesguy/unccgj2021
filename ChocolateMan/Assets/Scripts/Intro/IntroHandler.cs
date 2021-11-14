@@ -13,12 +13,18 @@ public class IntroHandler : MonoBehaviour
     public float timer = 0.0f;
     private bool respectPayed;
 
+    public AudioSource audioSource1;
+    public AudioSource audioSource2;
+    public AudioSource audioSource3;
+    public AudioSource audioSource4;
+
     // Start is called before the first frame update
     void Start()
     {
         this.textText = GetComponent<Text>();
         this.textText.text = text1;
         Camera.main.backgroundColor = Color.red;
+        audioSource1.Play();
     }
 
     // Update is called once per frame
@@ -29,7 +35,7 @@ public class IntroHandler : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
-        else if(timer > 12 && respectPayed)
+        else if(timer > 131 && respectPayed)
         {
             timer += Time.deltaTime;
             Color orig = respectfulText.color;
@@ -37,20 +43,30 @@ public class IntroHandler : MonoBehaviour
             Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, Color.green, 3.5f * Time.deltaTime);
             
         }
-        else if(timer > 12)
+        else if(timer > 37 && respectPayed)
+        {
+            timer += Time.deltaTime;
+            Color orig = respectfulText.color;
+            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 0, 1.0f * Time.deltaTime));
+            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, Color.green, 3.5f * Time.deltaTime);
+            
+        }
+        else if(timer > 35)
         {
             if(Input.GetKeyDown("f"))
             {
                 respectPayed = true;
                 this.textText.text = text2;
                 respectfulText.text = "Respect Payed";
+                audioSource3.Play();
             }
         }
-        else if(timer > 10)
+        else if(timer > 35)
         {
             timer += Time.deltaTime;
             Color orig = respectfulText.color;
             respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 1.0f, 2.0f * Time.deltaTime));
+            audioSource2.Play();
         }
         else
         {

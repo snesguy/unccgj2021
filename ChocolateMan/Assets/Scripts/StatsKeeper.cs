@@ -58,4 +58,46 @@ public static class StatsKeeper
 
         return stringValue;
     }
+
+    public static void SaveGame()
+    {
+        PlayerPrefs.SetString("chocolate", "" + chocolate);
+        PlayerPrefs.SetString("maxTankCapacity", "" + maxTankCapacity);
+        PlayerPrefs.SetString("ChocoTankSizeUpgradeCost", "" + ChocoTankSizeUpgradeCost);
+        PlayerPrefs.SetString("chocolateInTank", "" + chocolateInTank);
+        PlayerPrefs.SetString("day", "" + day);
+        PlayerPrefs.SetString("chocolatePerClick", "" + chocolatePerClick);
+        PlayerPrefs.SetString("chocolatePerClickCost", "" + chocolatePerClickCost);
+        PlayerPrefs.SetFloat("firingVelocity", firingVelocity);
+        PlayerPrefs.SetString("firingVelocityCost", "" + firingVelocityCost);
+        PlayerPrefs.SetString("chocolatePerSecond", "" + chocolatePerSecond);
+        PlayerPrefs.SetString("chocolatePerScondCost", "" + chocolatePerScondCost);
+        PlayerPrefs.SetFloat("chocolateSize", chocolateSize);
+        PlayerPrefs.SetString("chocolateSizeCost", "" + chocolateSizeCost);
+        PlayerPrefs.SetFloat("chocolateSizeRamp", chocolateSizeRamp);
+        PlayerPrefs.SetString("chocoBuddyCount", "" + chocoBuddyCount);
+        PlayerPrefs.SetFloat("chocoBuddyWorkRate", chocoBuddyWorkRate);
+        PlayerPrefs.SetString("chocoBuddyUpgradeCost", "" + chocoBuddyUpgradeCost);
+        //Color
+    }
+
+    public static void LoadGame()
+    {
+        PlayerPrefs.SetString("maxTankCapacity", "" + maxTankCapacity);
+        PlayerPrefs.SetString("ChocoTankSizeUpgradeCost", "" + ChocoTankSizeUpgradeCost);
+        PlayerPrefs.SetString("chocolateInTank", "" + chocolateInTank);
+        PlayerPrefs.SetString("day", "" + day);
+        PlayerPrefs.SetString("chocolatePerClick", "" + chocolatePerClick);
+        PlayerPrefs.SetString("chocolatePerClickCost", "" + chocolatePerClickCost);
+        PlayerPrefs.SetFloat("firingVelocity", firingVelocity);
+        PlayerPrefs.SetString("firingVelocityCost", "" + firingVelocityCost);
+        PlayerPrefs.SetString("chocolatePerSecond", "" + chocolatePerSecond);
+        PlayerPrefs.SetString("chocolatePerScondCost", "" + chocolatePerScondCost);
+        PlayerPrefs.SetFloat("chocolateSize", chocolateSize);
+        PlayerPrefs.SetString("chocolateSizeCost", "" + chocolateSizeCost);
+        PlayerPrefs.SetFloat("chocolateSizeRamp", chocolateSizeRamp);
+        PlayerPrefs.SetString("chocoBuddyCount", "" + chocoBuddyCount);
+        PlayerPrefs.SetFloat("chocoBuddyWorkRate", chocoBuddyWorkRate);
+        PlayerPrefs.SetString("chocoBuddyUpgradeCost", "" + chocoBuddyUpgradeCost);
+    }
 }
