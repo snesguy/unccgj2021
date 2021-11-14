@@ -17,6 +17,7 @@ public class IntroHandler : MonoBehaviour
     public AudioSource audioSource2;
     public AudioSource audioSource3;
     public AudioSource audioSource4;
+    public int state = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,28 +31,18 @@ public class IntroHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(timer > 25)
-        {
-            SceneManager.LoadScene(1);
-        }
-        else if(timer > 131 && respectPayed)
+        if(state == 0 && !audioSource1.isPlaying)
         {
             timer += Time.deltaTime;
-            Color orig = respectfulText.color;
-            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 0, 1.0f * Time.deltaTime));
-            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, Color.green, 3.5f * Time.deltaTime);
-            
+            audioSource2.Play();
+            state++;
         }
-        else if(timer > 37 && respectPayed)
+        else if(state == 1 && audioSource2.isPlaying)
         {
-            timer += Time.deltaTime;
             Color orig = respectfulText.color;
-            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 0, 1.0f * Time.deltaTime));
-            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, Color.green, 3.5f * Time.deltaTime);
-            
+            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 1.0f, 2.0f * Time.deltaTime));
         }
-        else if(timer > 35)
+        else if(state == 1 && !audioSource2.isPlaying)
         {
             if(Input.GetKeyDown("f"))
             {
@@ -59,18 +50,27 @@ public class IntroHandler : MonoBehaviour
                 this.textText.text = text2;
                 respectfulText.text = "Respect Payed";
                 audioSource3.Play();
+                state++;
             }
         }
-        else if(timer > 35)
+        else if(state == 2 && audioSource3.isPlaying)
         {
-            timer += Time.deltaTime;
-            Color orig = respectfulText.color;
-            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 1.0f, 2.0f * Time.deltaTime));
-            audioSource2.Play();
+            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, Color.green, 2.5f * Time.deltaTime);
         }
-        else
+        else if(state == 2 && !audioSource3.isPlaying)
         {
             timer += Time.deltaTime;
+            audioSource4.Play();
+            state++;
+        }
+        else if(state == 3 && audioSource4.isPlaying)
+        {
+            Color orig = respectfulText.color;
+            respectfulText.color = new Color(orig.r, orig.g, orig.b, Mathf.Lerp(orig.a, 0, 1.0f * Time.deltaTime));
+        }
+        else if(state == 3 && !audioSource4.isPlaying)
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }
