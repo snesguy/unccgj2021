@@ -21,9 +21,8 @@ public class DialogueText : MonoBehaviour
         //.rotation = placeToShow.rotation;
     }
 
-    public void setText(int infectionLevel, float infection)
+    public void setText(string text)
     {
-        string text = DialogeGenerator.getText(infectionLevel, infection);
         if(text != null)
             uiText.text = text;
 

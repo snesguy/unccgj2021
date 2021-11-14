@@ -23,7 +23,31 @@ public class ChocoLover : MonoBehaviour
     public List<AudioClip> audioClips4;
     public List<AudioClip> audioClips5;
     public List<AudioClip> audioClips6;
-    
+
+    public GameObject chocolate;
+    public DialogueText dialogueText;
+    private float infectiousRate = 0.01f;
+
+    public float infection;
+    public int infectionLevel;
+    private float textChangeDelay = 3.0f;
+    private float curTextChangeDelay;
+    private SpriteRenderer spriteRenderer;
+    private bool buddy = false;
+    public bool canBuddy = true;
+    public int curxIndex;
+    public int curyIndex;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.audioSource = GetComponent<AudioSource>();
+        if(dialogueText != null)
+            dialogueText.setText(getText(infectionLevel, infection));
+        curTextChangeDelay = textChangeDelay;
+    }
+
     public string getText(int infectionLevel, float infection)
     {
         if(infectionLevel >= dialogue.Length)
@@ -65,30 +89,6 @@ public class ChocoLover : MonoBehaviour
         return clips[curyIndex];
     }
 
-    public GameObject chocolate;
-    public DialogueText dialogueText;
-    private float infectiousRate = 0.01f;
-
-    public float infection;
-    public int infectionLevel;
-    private float textChangeDelay = 3.0f;
-    private float curTextChangeDelay;
-    private SpriteRenderer spriteRenderer;
-    private bool buddy = false;
-    public bool canBuddy = true;
-    public int curxIndex;
-    public int curyIndex;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
-        this.audioSource = GetComponent<AudioSource>();
-        if(dialogueText != null)
-            dialogueText.setText(infectionLevel, infection);
-        curTextChangeDelay = textChangeDelay;
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -125,12 +125,11 @@ public class ChocoLover : MonoBehaviour
         {
             Explode();
         }
-        if(curTextChangeDelay <= 0)
+        if(audioSource != null && !audioSource.isPlaying)
         {
             if(dialogueText != null)
             {
-                dialogueText.setText(infectionLevel, infection);
-                curTextChangeDelay = textChangeDelay;
+                dialogueText.setText(getText(infectionLevel, infection));
                 AudioClip clip = GetAudioClip();
                 if(clip != null && audioSource != null)
                 {
@@ -138,10 +137,6 @@ public class ChocoLover : MonoBehaviour
                     audioSource.Play();
                 }
             }
-        }
-        else
-        {
-            curTextChangeDelay -= Time.deltaTime;
         }
     }
 
