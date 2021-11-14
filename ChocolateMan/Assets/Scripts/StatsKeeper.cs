@@ -21,7 +21,7 @@ public static class StatsKeeper
     public static int chocoBuddyCount = 50;
     public static float chocoBuddyWorkRate = 5.0f;
     public static long chocoBuddyUpgradeCost = 1000;
-
+    public static Color chocoColor = new Color(154.0f/255.0f, 86.0f/255.0f, 0.0f, 244.0f/255.0f);
     public static void MoreChocolateManual()
     {
         chocolate += chocolatePerClick;
