@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: db58f5caa1f5b12eaaf5e99cd38b8a78
   - enabled: 1
     path: Assets/Scenes/Chocolate_Generator.unity
-    guid: 5bb8cce9bfe1230629282acd9e49d13b
+    guid: edd963e396e66ed489bfb24087d93f1b
   - enabled: 1
     path: Assets/Scenes/ProceduralRoom.unity
     guid: c90bb5ee0bacf9760888cf3ad8ac8cc8
